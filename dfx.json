@@ -1,0 +1,35 @@
+{
+  "canisters": {
+    "mintNFT_backend": {
+      "main": "src/mintNFT_backend/main.mo",
+      "type": "motoko"
+    },
+    "mintNFT_frontend": {
+      "dependencies": [
+        "mintNFT_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/mintNFT_frontend/src/index.html"
+      },
+      "source": [
+        "src/mintNFT_frontend/assets",
+        "dist/mintNFT_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "dfx": "0.11.0",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}
